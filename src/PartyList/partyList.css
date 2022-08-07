@@ -1,0 +1,176 @@
+.partyListWrapper {
+    position:relative;
+    overflow:auto;
+    top:0;
+    left:0;
+    z-index: 999;
+    width: 100%;
+    height:0px;
+    display: flex;
+    justify-content: left;
+    transition: all .5s ease-in-out;
+    transition-delay: 2s;
+} 
+
+.partyListBox {
+    position: fixed;
+    margin:20px 10px 10px 20px;
+    background-color: #fff;
+    justify-content: center;
+    padding:10px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 0px rgba(124, 124, 124, 0.5);
+    width: 110px;
+    height:65px;
+    overflow: hidden;
+    -webkit-transition-property: height;
+    -webkit-transition-duration: .5s;
+    transition-property: height, width;
+    transition-duration: .5s;
+} 
+
+.partyListBox:hover {
+    height:325px;
+    width:275px;
+}
+
+.ballAndCount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pokeBallIcon {
+    width: 50px;
+    height: 50px;
+    transition: all .2s linear;
+}
+
+.partyListBox:hover .pokeBallIcon {
+    transform: rotate(360deg);
+}
+
+
+.countWrapper {
+    background-color: rgb(203, 17, 17);
+    color:#fff;
+    border-radius: 50%;
+    width:30px;
+    height:30px;
+    display: block;
+    margin:10px 0px 0px 5px;
+    align-items: center;
+    justify-content: center;
+    padding:3px 10px;
+}
+
+
+.monList{
+    height:0px;
+    overflow: hidden;
+    text-transform: capitalize;
+    min-width: 250px;
+    opacity:0;
+    transition: opacity .5s ease-in-out;
+    transition-delay: .2s;
+}
+
+.partyListBox:hover .monList {
+    animation: slideDownList .2s forwards;
+    animation-timing-function: linear;
+    height:unset;
+    opacity: 1;
+
+}
+
+.divide {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin:5px 0px;
+}
+
+.partyListHeader {
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.monList ol {
+    padding:0px 0px 0px 10px;
+}
+
+
+.monList li {
+    padding:0px 0px;
+    list-style-type: none;
+    font-size: 18px;
+    cursor:default;
+    transition: font-weight, font-size .2s ease-in-out;
+    overflow-y: hidden;
+}
+
+.monList li:hover {
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.monList li img {
+    position: relative;
+    top:5px;
+}
+
+.monList li:hover img {
+    animation: jump .3s infinite;
+}
+
+@keyframes jump {
+    0% {top:5px}
+    100% {top:0px}
+    
+}
+
+.listEmptyMsg {
+    width: 90%;
+    height: 225px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color:#ccc;
+}
+
+/* .spriteWrapper {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-position: -20px -20px;
+    background-repeat: no-repeat;
+}
+
+.sprite {
+    width: 40px;
+} */
+
+@media only screen and (max-width:768px) {
+    .partyListWrapper {
+        justify-content: right;
+    }
+
+    .partyListBox {
+        margin: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+}
+
+
+
+
+
+
+

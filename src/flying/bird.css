@@ -1,0 +1,38 @@
+.birdWrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.parallaxBackgroundBird {
+    background-image: url(https://wallpaperaccess.com/full/2513419.jpg);
+    background-position-y: 0%;
+    background-size: cover;
+    height: 200vh;
+    width: 100%;
+    position: relative;
+    top:35vh;
+    z-index: -10;
+}
+
+.birdDataWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    width: 390px;
+    position: absolute;
+}
+
+
+@media only screen and (max-width:425px) {
+
+    .birdDataWrapper {
+        width: 90%;
+    }
+
+}
+

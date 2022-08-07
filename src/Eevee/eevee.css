@@ -1,0 +1,36 @@
+.eeveeWrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.parallaxBackgroundEevee {
+    background-image: url(https://i.pinimg.com/originals/a5/68/06/a56806bce812d4ec85665792d83b809b.png);
+    background-position-y: 0%;
+    background-position-x: 50%;
+    background-size: cover;
+    height: 200vh;
+    width: 100%;
+    position: relative;
+    top:105vh;
+}
+
+.eeveeDataWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 390px;
+    position: absolute;
+}
+
+
+@media only screen and (max-width:425px) {
+
+    .eeveeDataWrapper {
+        width: 90%;
+    }
+
+}
