@@ -51,7 +51,16 @@ export default function PartyList({ party, count, listEmptyMsg }) {
                     className='spriteWrapper'
                     style={{ backgroundImage: `url(${mon[1]})` }}></div> */}
                   <img src={mon[1]} className='sprite' />
-                  {mon[0]}
+                  <a
+                    href={
+                      "https://bulbapedia.bulbagarden.net/wiki/" +
+                      mon[0] +
+                      "_(Pokémon)"
+                    }
+                    target='_blank'
+                  >
+                    {mon[0]}
+                  </a>
                 </li>
               );
             })}

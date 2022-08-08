@@ -17,6 +17,19 @@ code {
     monospace;
 }
 
+.redTitle {
+  background-color: rgb(206, 29, 29);
+  color:#fff;
+  padding:5px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 0px rgb(168, 21, 21);
+  font-size: 3vw;
+  position: absolute;
+  top:100px;
+  left:90px;
+}
+
 button {
   border:0px;
   padding:15px 25px;
@@ -210,7 +223,7 @@ button {
 }
 
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:950px) {
 
   .pkmDisplay {
     padding:10px 10px;
@@ -292,11 +305,19 @@ button {
     margin:0px 0px 0px 0px;
   }
 
-  .add, .reRoll {
+  .add {
     margin:0px 3px;
     font-size: 2vh;
     font-weight: normal;
     border:none;
+    width: 90%;
+  }
+
+  .reRoll {
+    margin:2px 3px;
+    font-size: 1.5vh;
+    font-weight: normal;
+    border:1px solid #000;
     width: 90%;
   }
 

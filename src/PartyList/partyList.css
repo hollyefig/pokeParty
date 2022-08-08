@@ -112,9 +112,15 @@
     overflow-y: hidden;
 }
 
+.monList li a {
+    color:rgb(81, 133, 179);
+    text-decoration: none;
+}
+
 .monList li:hover {
     font-weight: 700;
     font-size: 19px;
+    text-decoration: underline;
 }
 
 .monList li img {
