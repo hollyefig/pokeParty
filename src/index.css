@@ -17,18 +17,7 @@ code {
     monospace;
 }
 
-.redTitle {
-  background-color: rgb(206, 29, 29);
-  color:#fff;
-  padding:5px 20px;
-  border-radius: 20px;
-  font-weight: 700;
-  text-shadow: 2px 2px 0px rgb(168, 21, 21);
-  font-size: 3vw;
-  position: absolute;
-  top:100px;
-  left:90px;
-}
+
 
 button {
   border:0px;

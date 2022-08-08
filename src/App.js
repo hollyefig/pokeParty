@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { getMon, getType } from "./APIcalls";
 import DownArrow from "./downArrow/DownArrow";
 import Eevee from "./Eevee/Eevee";
+import Egg from "./egg/Egg";
 import FairyOrDragon from "./fairyOrDragon/FairyOrDragon";
 import Bird from "./flying/Bird";
 import Header from "./header/Header";
@@ -79,6 +80,10 @@ function App() {
   const [eeveeRollCount, setEeveeRollCount] = useState(2);
   const [addEeveeDisabled, setAddEeveeDisabled] = useState(false);
   const [eeveeRollDisabled, setEeveeRollDisabled] = useState(false);
+
+  const [eggRollCount, setEggRollCount] = useState(3);
+  const [addEggDisabled, setAddEggDisabled] = useState(true);
+  const [eggRollDisabled, setEggRollDisabled] = useState(true);
 
   const [rollMessage, setRollMessage] = useState(
     <>
@@ -173,9 +178,17 @@ function App() {
     } else if (party.slot5[0] === "" && party.slot5[1] === "") {
       setParty({
         ...party,
-        slot5: mon.name,
+        slot5: [
+          mon.name,
+          mon.sprites.versions["generation-vii"].icons.front_default === null
+            ? mon.sprites.versions["generation-viii"].icons.front_default
+            : mon.sprites.versions["generation-vii"].icons.front_default,
+        ],
       });
       setCount(count + 1);
+      setEggRollDisabled(true);
+      setEggRollCount(0);
+      setAddEggDisabled(true);
     } else if (party.slot6[0] === "" && party.slot6[1] === "") {
       setParty({
         ...party,
@@ -231,6 +244,18 @@ function App() {
         setEeveeRollDisabled={setEeveeRollDisabled}
         eeveeRollCount={eeveeRollCount}
         setEeveeRollCount={setEeveeRollCount}
+      />
+
+      <Egg
+        addToParty={addToParty}
+        rollMessage={rollMessage}
+        setRollMessage={setRollMessage}
+        eggRollCount={eggRollCount}
+        setEggRollCount={setEggRollCount}
+        addEggDisabled={addEggDisabled}
+        setAddEggDisabled={setAddEggDisabled}
+        eggRollDisabled={eggRollDisabled}
+        setEggRollDisabled={setEggRollDisabled}
       />
       {/* <Test
         getRandomMon={getRandomMon}
