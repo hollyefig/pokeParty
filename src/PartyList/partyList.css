@@ -113,14 +113,19 @@
 }
 
 .monList li a {
-    color:rgb(81, 133, 179);
+    color:#000;
     text-decoration: none;
+    transition: color .1s ease-in-out;
 }
 
 .monList li:hover {
     font-weight: 700;
     font-size: 19px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+}
+
+.monList a:hover {
+    color:rgb(81, 133, 179);
 }
 
 .monList li img {
