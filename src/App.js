@@ -225,6 +225,7 @@ function App() {
         setBirdRollDisabled={setBirdRollDisabled}
         addBirdDisabled={addBirdDisabled}
       />
+
       <FairyOrDragon
         addToParty={addToParty}
         rollMessage={rollMessage}

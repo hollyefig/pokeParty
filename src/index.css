@@ -17,8 +17,7 @@ code {
     monospace;
 }
 
-.eggOuter {
-  width:425px;
+.eggOuter, .eggOuterTriple {
   /* border:1px solid black; */
   padding:20px;
   display: flex;
@@ -29,7 +28,15 @@ code {
   overflow-y: hidden;
 }
 
-.redTitle {
+.eggOuter {
+  width:425px;
+}
+
+.eggOuterTriple {
+  width:auto;
+}
+
+.redTitle, .redTitleTriple {
   background-color: rgb(206, 29, 29);
   color:#fff;
   padding:5px 20px;
@@ -42,7 +49,7 @@ code {
   left:50px;
 }
 
-.eggInner {
+.eggInner, .eggInnerTriple {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,7 +62,7 @@ code {
 
 }
 
-.eggCopy {
+.eggCopy, .eggCopyTriple {
   padding:7px;
   display: flex;
   flex-direction: column;
@@ -66,11 +73,11 @@ code {
 
 }
 
-.eggImgWrapper {
+.eggImgWrapper, .eggImgWrapperTriple {
   width: 100%;
 }
 
-.eggAniWrapper {
+.eggAniWrapper, .eggAniWrapperTriple {
   padding:5px;
   width: 100%;
   height:300px;
@@ -81,6 +88,14 @@ code {
   flex-direction: column;
   overflow-y: hidden;
 
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .nameh2 {
@@ -288,8 +303,46 @@ button {
   display:none;
 }
 
+@media only screen and (max-width:1240px) {
 
-@media only screen and (max-width:950px) {
+  .eggOuterTriple {
+    width:520px;
+    padding:5px 20px;
+    /* border:1px solid black; */
+  }
+
+  .eggInnerTriple {
+    flex-direction: row;
+    width: 100%;
+    padding:5px;
+  }
+
+  .eggCopyTriple {
+    flex-direction: row;
+  }
+  
+  .eggImgWrapperTriple {
+    width: 125px;
+  }
+
+  .eggAniWrapperTriple {
+    height:130px;
+    padding:0px
+  }
+
+  .buttonsWrapper {
+    width:50%;
+  }
+
+  .redTitleTriple {
+    position: relative;
+    top: 20px;
+    left: 0px;
+  }
+
+  .nameh2 {
+    padding:10px 0px;
+  }
 
   .pkmDisplay {
     padding:10px 10px;
@@ -427,6 +480,13 @@ button {
 
 }
 
+@media only screen and (max-width:500px) {
+
+  .eggOuterTriple {
+    width:100%;
+  }
+}
+
 @media only screen and (max-width:425px) {
 
   .eggOuter {
@@ -439,7 +499,11 @@ button {
   left:0px;
   font-size: 25px;
   }
-
+ 
+  .redTitleTriple {
+  font-size: 20px;
+  }
+  
   .eggInner {
       width: 100%;
   }

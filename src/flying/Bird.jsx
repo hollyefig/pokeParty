@@ -78,42 +78,53 @@ export default function Bird({
         className='parallaxBackgroundBird'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}
       ></div>
-      <div className='birdDataWrapper pkmDisplay'>
-        <h3>Who is your</h3>
-        <h1 className='cardTitleSingle'>Flying Type?</h1>
-        <div className='cardImgWrapperSingle'>
-          {loading ? (
-            <>
-              <PokeballAnimation />
-            </>
-          ) : (
-            <>
-              <img
-                src={flyingMon.sprites.other["official-artwork"].front_default}
-                className='monImgSingle'
-              />
-              <h2>{flyingMon.name}</h2>
-            </>
-          )}
-        </div>
-        <button
-          className='add'
-          onClick={() => addToParty(flyingMon)}
-          disabled={addBirdDisabled}
-        >
-          Add to Party!
-        </button>
-        <div className='reRollWrapper'>
-          <button
-            className='reRoll'
-            onClick={() => getRandomFlyingData() && reRollButton()}
-            disabled={birdRollDisabled}
-          >
-            ReRoll
-          </button>
-          <div className='rollsLeftWrapper'>
-            <h1 className='rollCounth1'>{birdRollCount}</h1>
-            <div className='rollsLeftText'>{rollMessage}</div>
+      <div className='eggOuter'>
+        <div className='redTitle'>Flying Type</div>
+        <div className='eggInner'>
+          <div className='eggCopy'>
+            <div className='eggImgWrapper'>
+              <div className='eggAniWrapper'>
+                {loading ? (
+                  <>
+                    <PokeballAnimation />
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={
+                        flyingMon.sprites.other["official-artwork"]
+                          .front_default
+                      }
+                      className='birdImg'
+                    />
+                    <h2 className='nameh2'>{flyingMon.name}</h2>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <button
+              className='add'
+              onClick={() => addToParty(flyingMon)}
+              disabled={addBirdDisabled}
+            >
+              Add to Party!
+            </button>
+            <div className='reRollWrapper'>
+              <button
+                className='reRoll'
+                onClick={() => getRandomFlyingData() && reRollButton()}
+                disabled={birdRollDisabled}
+              >
+                ReRoll
+              </button>
+              <div className='rollsLeftWrapper'>
+                <h1 className='rollCounth1'>{birdRollCount}</h1>
+                <div className='rollsLeftText'>{rollMessage}</div>
+              </div>
+            </div>
+
+            {/* end copy  */}
           </div>
         </div>
       </div>

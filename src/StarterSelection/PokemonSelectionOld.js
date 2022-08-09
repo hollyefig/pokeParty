@@ -143,35 +143,14 @@ export default function PokemonSelection({
   return (
     <div className='wrapper'>
       <div className='grassWrapper'>
-        <div className='eggOuterTriple'>
-          <div className='redTitleTriple'>Grass Type</div>
-          <div className='eggInnerTriple'>
-            <div className='eggCopyTriple'>
-              <div className='eggImgWrapperTriple'>
-                <div className='eggAniWrapperTriple'>
-                  {loading ? (
-                    <>
-                      <PokeballAnimation />
-                    </>
-                  ) : (
-                    <>
-                      <img
-                        src={
-                          grassTypeMon.sprites.other["official-artwork"]
-                            .front_default
-                        }
-                      />
-                    </>
-                  )}
-                </div>
-              </div>
-
-              <div className='buttonsWrapper'>
-                {loading ? (
-                  <h2 className='nameh2'>&nbsp;</h2>
-                ) : (
-                  <h2 className='nameh2'>{grassTypeMon.name}</h2>
-                )}{" "}
+        <div className='cardWrapper pkmDisplay'>
+          <div className='cardMobileFlex'>
+            <div className='cardTextButtonMobile'>
+              <h3>Who is your</h3>
+              <h1 className='cardTitle'>Grass Starter?</h1>
+              {/* end card text button mobile  */}
+              {/* start mobile show  */}
+              <div className='mobileShow'>
                 <button
                   className='add'
                   onClick={() => addToParty(grassTypeMon)}
@@ -179,11 +158,13 @@ export default function PokemonSelection({
                 >
                   Add to Party!
                 </button>
+
                 <div className='reRollWrapper'>
                   <button
                     className='reRoll'
-                    onClick={() => getGrassTypeData() && refresh("grassState")}
+                    value='grassState'
                     disabled={rollDisabled}
+                    onClick={() => getGrassTypeData() && refresh("grassState")}
                   >
                     ReRoll
                   </button>
@@ -192,10 +173,57 @@ export default function PokemonSelection({
                     <div className='rollsLeftText'>{rollMessage}</div>
                   </div>
                 </div>
+                {/* end mobile show  */}
               </div>
-
-              {/* end copy  */}
             </div>
+
+            <div className='cardImgWrapper'>
+              {loading ? (
+                <>
+                  <PokeballAnimation />
+                  <h2>&nbsp;</h2>
+                </>
+              ) : (
+                <>
+                  <img
+                    src={
+                      grassTypeMon.sprites.other["official-artwork"]
+                        .front_default
+                    }
+                    className='monImg'
+                  />
+                  <h2>{grassTypeMon.name}</h2>
+                </>
+              )}
+            </div>
+
+            {/* end mobile flex  */}
+          </div>
+          {/* start mobile hide  */}
+          <div className='buttonWrapper'>
+            <button
+              className='add'
+              onClick={() => addToParty(grassTypeMon)}
+              disabled={addStarterDisabled}
+            >
+              Add to Party!
+            </button>
+
+            <div className='reRollWrapper'>
+              <button
+                className='reRoll'
+                value='grassState'
+                disabled={rollDisabled}
+                onClick={() => getGrassTypeData() && refresh("grassState")}
+              >
+                ReRoll
+              </button>
+              <div className='rollsLeftWrapper'>
+                <h1 className='rollCounth1'>{rollCount}</h1>
+                <div className='rollsLeftText'>{rollMessage}</div>
+              </div>
+            </div>
+            {/* end mobile hide  */}
           </div>
         </div>
         {/*  */}
@@ -205,36 +233,14 @@ export default function PokemonSelection({
       {/* */}
       {/*  */}
       <div className='fireWrapper'>
-        <div className='eggOuterTriple'>
-          <div className='redTitleTriple'>Fire Type</div>
-          <div className='eggInnerTriple'>
-            <div className='eggCopyTriple'>
-              <div className='eggImgWrapperTriple'>
-                <div className='eggAniWrapperTriple'>
-                  {loading ? (
-                    <>
-                      <PokeballAnimation />
-                    </>
-                  ) : (
-                    <>
-                      <img
-                        src={
-                          fireTypeMon.sprites.other["official-artwork"]
-                            .front_default
-                        }
-                        className=''
-                      />
-                    </>
-                  )}
-                </div>
-              </div>
-
-              <div className='buttonsWrapper'>
-                {loading ? (
-                  <h2 className='nameh2'>&nbsp;</h2>
-                ) : (
-                  <h2 className='nameh2'>{fireTypeMon.name}</h2>
-                )}{" "}
+        <div className='cardWrapper pkmDisplay'>
+          <div className='cardMobileFlex'>
+            <div className='cardTextButtonMobile'>
+              <h3>Who is your</h3>
+              <h1 className='cardTitle'>Fire Starter?</h1>
+              {/* end card text button mobile  */}
+              {/* mobile show  */}
+              <div className='mobileShow'>
                 <button
                   className='add'
                   onClick={() => addToParty(fireTypeMon)}
@@ -242,11 +248,13 @@ export default function PokemonSelection({
                 >
                   Add to Party!
                 </button>
+
                 <div className='reRollWrapper'>
                   <button
                     className='reRoll'
-                    onClick={() => getFireTypeData() && refresh("FireState")}
+                    value='fireState'
                     disabled={rollDisabled}
+                    onClick={() => getFireTypeData() && refresh("fireState")}
                   >
                     ReRoll
                   </button>
@@ -255,50 +263,73 @@ export default function PokemonSelection({
                     <div className='rollsLeftText'>{rollMessage}</div>
                   </div>
                 </div>
+                {/* end mobile show  */}
               </div>
-
-              {/* end copy  */}
             </div>
+
+            <div className='cardImgWrapper'>
+              {loading ? (
+                <>
+                  <PokeballAnimation />
+                  <h2>&nbsp;</h2>
+                </>
+              ) : (
+                <>
+                  <img
+                    src={
+                      fireTypeMon.sprites.other["official-artwork"]
+                        .front_default
+                    }
+                    className='monImg'
+                  />
+                  <h2>{fireTypeMon.name}</h2>
+                </>
+              )}
+            </div>
+            {/* end mobile flex */}
+          </div>
+
+          {/* mobile hide  */}
+          <div className='buttonWrapper'>
+            <button
+              className='add'
+              onClick={() => addToParty(fireTypeMon)}
+              disabled={addStarterDisabled}
+            >
+              Add to Party!
+            </button>
+
+            <div className='reRollWrapper'>
+              <button
+                className='reRoll'
+                value='fireState'
+                disabled={rollDisabled}
+                onClick={() => getFireTypeData() && refresh("fireState")}
+              >
+                ReRoll
+              </button>
+              <div className='rollsLeftWrapper'>
+                <h1 className='rollCounth1'>{rollCount}</h1>
+                <div className='rollsLeftText'>{rollMessage}</div>
+              </div>
+            </div>
+            {/* end mobile hide  */}
           </div>
         </div>
-        {/*  */}
       </div>
 
       {/* water starter */}
       {/*  */}
       {/*  */}
-      <div className='grassWrapper'>
-        <div className='eggOuterTriple'>
-          <div className='redTitleTriple'>Water Type</div>
-          <div className='eggInnerTriple'>
-            <div className='eggCopyTriple'>
-              <div className='eggImgWrapperTriple'>
-                <div className='eggAniWrapperTriple'>
-                  {loading ? (
-                    <>
-                      <PokeballAnimation />
-                    </>
-                  ) : (
-                    <>
-                      <img
-                        src={
-                          waterTypeMon.sprites.other["official-artwork"]
-                            .front_default
-                        }
-                        className=''
-                      />
-                    </>
-                  )}
-                </div>
-              </div>
-
-              <div className='buttonsWrapper'>
-                {loading ? (
-                  <h2 className='nameh2'>&nbsp;</h2>
-                ) : (
-                  <h2 className='nameh2'>{waterTypeMon.name}</h2>
-                )}
-
+      <div className='waterWrapper'>
+        <div className='cardWrapper pkmDisplay'>
+          <div className='cardMobileFlex'>
+            <div className='cardTextButtonMobile'>
+              <h3>Who is your</h3>
+              <h1 className='cardTitle'>Water Starter?</h1>
+              {/* end card text button mobile  */}
+              {/* mobile show  */}
+              <div className='mobileShow'>
                 <button
                   className='add'
                   onClick={() => addToParty(waterTypeMon)}
@@ -306,11 +337,13 @@ export default function PokemonSelection({
                 >
                   Add to Party!
                 </button>
+
                 <div className='reRollWrapper'>
                   <button
                     className='reRoll'
-                    onClick={() => getWaterTypeData() && refresh("waterState")}
+                    value='waterState'
                     disabled={rollDisabled}
+                    onClick={() => getWaterTypeData() && refresh("waterState")}
                   >
                     ReRoll
                   </button>
@@ -319,13 +352,59 @@ export default function PokemonSelection({
                     <div className='rollsLeftText'>{rollMessage}</div>
                   </div>
                 </div>
+                {/* end mobile show  */}
               </div>
-
-              {/* end copy  */}
             </div>
+
+            <div className='cardImgWrapper'>
+              {loading ? (
+                <>
+                  <PokeballAnimation />
+                  <h2>&nbsp;</h2>
+                </>
+              ) : (
+                <>
+                  <img
+                    src={
+                      waterTypeMon.sprites.other["official-artwork"]
+                        .front_default
+                    }
+                    className='monImg'
+                  />
+                  <h2>{waterTypeMon.name}</h2>
+                </>
+              )}
+            </div>
+            {/* end mobile flex  */}
+          </div>
+
+          {/* mobile hide  */}
+          <div className='buttonWrapper'>
+            <button
+              className='add'
+              onClick={() => addToParty(waterTypeMon)}
+              disabled={addStarterDisabled}
+            >
+              Add to Party!
+            </button>
+
+            <div className='reRollWrapper'>
+              <button
+                className='reRoll'
+                value='waterState'
+                disabled={rollDisabled}
+                onClick={() => getWaterTypeData() && refresh("waterState")}
+              >
+                ReRoll
+              </button>
+              <div className='rollsLeftWrapper'>
+                <h1 className='rollCounth1'>{rollCount}</h1>
+                <div className='rollsLeftText'>{rollMessage}</div>
+              </div>
+            </div>
+            {/* end mobile hide  */}
           </div>
         </div>
-        {/*  */}
       </div>
     </div>
   );

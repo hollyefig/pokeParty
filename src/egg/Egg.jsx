@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./egg.css";
 import { getEeveeData } from "../APIcalls";
 import PokeballAnimation from "../PokeballAnimation";
+import { click } from "@testing-library/user-event/dist/click";
 
 export default function Egg({
   addToParty,
@@ -26,6 +27,7 @@ export default function Egg({
   const [isHatched, setIsHatched] = useState(false);
   const [loading, setLoading] = useState();
   const disabled = true;
+  const [clickMsg, setClickMsg] = useState("Click me!");
 
   const fetchEggs = async () => {
     const pichu = await getEeveeData(172);
@@ -111,6 +113,12 @@ export default function Egg({
     }
   };
 
+  useEffect(() => {
+    if (window.screen.width <= 768) {
+      setClickMsg("Tap me!");
+    }
+  }, [window.screen.width]);
+
   return (
     <div className='eggWrapper'>
       <div className='eggOuter'>
@@ -142,34 +150,47 @@ export default function Egg({
                         }
                         style={hatchAni}
                       />
+                      <h2
+                        className='eggh2'
+                        style={
+                          isHatched === true ? { opacity: 1 } : { opacity: 0 }
+                        }
+                      >
+                        {isHatched === true ? egg.name : "empty"}
+                      </h2>
                     </>
                   )
                 ) : (
-                  <img
-                    src={
-                      isHatched === true
-                        ? egg.sprites.other["official-artwork"].front_default
-                        : egg
-                    }
-                    className={
-                      isHatched === true ? "eggStatic" : "eggAnimation"
-                    }
-                    style={hatchAni}
-                  />
+                  <>
+                    <img
+                      src={
+                        isHatched === true
+                          ? egg.sprites.other["official-artwork"].front_default
+                          : egg
+                      }
+                      className={
+                        isHatched === true ? "eggStatic" : "eggAnimation"
+                      }
+                      style={hatchAni}
+                    />
+                    <h2
+                      className='eggh2'
+                      style={
+                        isHatched === true ? { opacity: 1 } : { opacity: 0 }
+                      }
+                    >
+                      {isHatched === true ? egg.name : "empty"}
+                    </h2>
+                  </>
                 )}
               </div>
             </div>
-            <h2
-              className='eggh2'
-              style={isHatched === true ? { opacity: 1 } : { opacity: 0 }}
-            >
-              {isHatched === true ? egg.name : "empty"}
-            </h2>
+
             <div
               className='eggMsg'
               style={isHatched === true ? { opacity: 0 } : { opacity: 1 }}
             >
-              Click Me!
+              {clickMsg}
             </div>
 
             <button
