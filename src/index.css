@@ -322,11 +322,11 @@ button {
   }
   
   .eggImgWrapperTriple {
-    width: 125px;
+    width: 160px;
   }
 
   .eggAniWrapperTriple {
-    height:130px;
+    height:180px;
     padding:0px
   }
 
@@ -338,6 +338,7 @@ button {
     position: relative;
     top: 20px;
     left: 0px;
+    font-size: 20px;
   }
 
   .nameh2 {
@@ -500,10 +501,6 @@ button {
   font-size: 25px;
   }
  
-  .redTitleTriple {
-  font-size: 20px;
-  }
-  
   .eggInner {
       width: 100%;
   }
@@ -527,9 +524,21 @@ button {
   .cardImgWrapper {
     width: 70%;
   }
+
+  .nameh2 {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width:325px) {
 
+  .eggImgWrapperTriple {
+    width: 150px;
+  }
+
+  .eggAniWrapperTriple {
+    height:160px;
+    padding:0px
+  }
 
 }
