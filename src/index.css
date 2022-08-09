@@ -66,6 +66,10 @@ code {
 
 }
 
+.eggImgWrapper {
+  width: 100%;
+}
+
 .eggAniWrapper {
   padding:5px;
   width: 100%;
