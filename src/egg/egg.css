@@ -5,7 +5,20 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    background-color:rgb(244, 212, 217)
+    background-color:rgb(244, 212, 217);
+    overflow-y: hidden;
+}
+
+.parallaxBackgroundEgg {
+    background-image: url(https://archives.bulbagarden.net/media/upload/1/1f/Johto_Route_34_HGSS.png);
+    background-position-y: 0%;
+    background-position-x: 50%;
+    background-size: cover;
+    height: 200vh;
+    width: 100%;
+    position: relative;
+    top:105vh;
+    opacity: .7;
 }
 
 

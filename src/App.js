@@ -175,6 +175,13 @@ function App() {
       setEeveeRollDisabled(true);
       setEeveeRollCount(0);
       setAddEeveeDisabled(true);
+      // for arrow
+      setFadeIn({
+        opacity: 1,
+        transitionDelay: "0s",
+        height: "115px",
+        padding: "10px",
+      });
     } else if (party.slot5[0] === "" && party.slot5[1] === "") {
       setParty({
         ...party,

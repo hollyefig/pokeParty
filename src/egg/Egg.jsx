@@ -119,8 +119,22 @@ export default function Egg({
     }
   }, [window.screen.width]);
 
+  // parallax scrolling
+  const [offSet, setOffset] = useState(0);
+
+  const handleScroll = () => setOffset(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className='eggWrapper'>
+      <div
+        className='parallaxBackgroundEgg'
+        style={{ transform: `translateY(${offSet * -0.2}px)` }}
+      ></div>
       <div className='eggOuter'>
         <div className='redTitle'>Hatch the Egg</div>
 
