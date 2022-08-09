@@ -1,9 +1,12 @@
 .eeveeWrapper {
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    align-content: center;
+    overflow-y: hidden;
+    background-color:rgb(244, 229, 224);
 }
 
 .parallaxBackgroundEevee {
@@ -24,6 +27,10 @@
     flex-direction: column;
     width: 390px;
     position: absolute;
+}
+
+.eeveeImg {
+    width:80%;
 }
 
 

@@ -17,7 +17,78 @@ code {
     monospace;
 }
 
+.eggOuter {
+  width:425px;
+  /* border:1px solid black; */
+  padding:20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow-y: hidden;
+}
 
+.redTitle {
+  background-color: rgb(206, 29, 29);
+  color:#fff;
+  padding:5px 20px;
+  border-radius: 15px;
+  font-weight: 700;
+  text-shadow: 2px 2px 0px rgb(168, 21, 21);
+  font-size: 30px;
+  position: absolute;
+  top:0px;
+  left:50px;
+}
+
+.eggInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  background-color: #fff;
+  padding:20px;
+  border-radius: 20px;
+  overflow-y: hidden;
+
+}
+
+.eggCopy {
+  padding:7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-y: hidden;
+
+}
+
+.eggAniWrapper {
+  padding:5px;
+  width: 100%;
+  height:300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  flex-direction: column;
+  overflow-y: hidden;
+
+}
+
+.nameh2 {
+  text-transform: capitalize;
+  overflow-y: hidden;
+}
+
+.eggh2 {
+  margin:0px 0px -35px 0px;
+  text-transform: capitalize;
+  overflow-y: hidden;
+}
 
 button {
   border:0px;
@@ -131,11 +202,13 @@ button {
 
 /* note this height  */
 .animationWrapper {
-  width: 400px;
+  width: 100%;
   height: 270px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  overflow-y: hidden;
+
 }
 
 .animationWrapper img {
@@ -351,6 +424,21 @@ button {
 }
 
 @media only screen and (max-width:425px) {
+
+  .eggOuter {
+    width:100%;
+  }
+
+  .redTitle {
+  position: relative;
+  top:20px;
+  left:0px;
+  font-size: 25px;
+  }
+
+  .eggInner {
+      width: 100%;
+  }
 
   .cardTitle {
     font-size:8vw;

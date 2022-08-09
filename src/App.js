@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { getMon, getType } from "./APIcalls";
 import DownArrow from "./downArrow/DownArrow";
-import Eevee from "./Eevee/Eevee";
+import Eevee2 from "./Eevee/Eevee2";
 import Egg from "./egg/Egg";
 import FairyOrDragon from "./fairyOrDragon/FairyOrDragon";
 import Bird from "./flying/Bird";
@@ -235,7 +235,8 @@ function App() {
         setRollMessage={setRollMessage}
         setFodRollDisabled={setFodRollDisabled}
       />
-      <Eevee
+
+      <Eevee2
         addToParty={addToParty}
         rollMessage={rollMessage}
         setRollMessage={setRollMessage}

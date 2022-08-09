@@ -129,12 +129,12 @@ export default function Egg({
                 />
               </div>
             </div>
-            <h1
-              className='eggh1'
+            <h2
+              className='eggh2'
               style={isHatched === true ? { opacity: 1 } : { opacity: 0 }}
             >
               {isHatched === true ? egg.name : "empty"}
-            </h1>
+            </h2>
             <div
               className='eggMsg'
               style={isHatched === true ? { opacity: 0 } : { opacity: 1 }}

@@ -8,47 +8,6 @@
     background-color:rgb(244, 212, 217)
 }
 
-.eggOuter {
-    width:425px;
-    /* border:1px solid black; */
-    padding:10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.redTitle {
-    background-color: rgb(206, 29, 29);
-    color:#fff;
-    padding:5px 20px;
-    border-radius: 15px;
-    font-weight: 700;
-    text-shadow: 2px 2px 0px rgb(168, 21, 21);
-    font-size: 30px;
-    position: relative;
-    top:20px;
-    right:50px;
-  }
-
-.eggInner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    background-color: #fff;
-    padding:20px;
-    border-radius: 20px;
-}
-
-.eggCopy {
-    padding:7px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .eggMsg {
     background-color: #fff;
@@ -68,20 +27,6 @@
     0% {top:-240px}
     50% {top:-245px}
     100% {top:-240px}
-}
-
-.eggh1 {
-    margin:0px 0px -35px 0px;
-    text-transform: capitalize;
-}
-
-.eggAniWrapper {
-    padding:5px;
-    height:300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: hidden;
 }
 
 .eggAnimation {
@@ -106,20 +51,7 @@
 
 @media only screen and (max-width:425px) {
     
-    .eggOuter {
-        width:100%;
-    }
-
-    .redTitle {
-    position: relative;
-    top:20px;
-    right:0px;
-    font-size: 25px;
-    }
-
-    .eggInner {
-        width: 100%;
-    }
+    
 }
 
 @media only screen and (max-width:375px) {
@@ -133,7 +65,6 @@
     }
 
     .eggMsg {
-       
         top:-240px;
         left:50px;
     }
