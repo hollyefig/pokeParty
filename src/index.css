@@ -28,6 +28,20 @@ code {
   overflow-y: hidden;
 }
 
+.eggOuterDouble, .eggOuterDoubleOpen {
+  /* border:1px solid black; */
+  padding:20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  position: relative;
+  height:350px;
+  width:100%;
+  transition: all .2s ease-in-out;
+}
+
 .eggOuter {
   width:425px;
 }
@@ -36,7 +50,7 @@ code {
   width:auto;
 }
 
-.redTitle, .redTitleTriple {
+.redTitle, .redTitleDouble, .redTitleTriple {
   background-color: rgb(206, 29, 29);
   color:#fff;
   padding:5px 20px;
@@ -47,9 +61,10 @@ code {
   position: absolute;
   top:0px;
   left:50px;
+  overflow-y: hidden;
 }
 
-.eggInner, .eggInnerTriple {
+.eggInner, .eggInnerDouble, .eggInnerDoubleOpen, .eggInnerTriple {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,7 +77,13 @@ code {
 
 }
 
-.eggCopy, .eggCopyTriple {
+.eggInnerDouble {
+  height:100%;
+  transition: all 1s linear;
+  overflow-y: hidden;
+}
+
+.eggCopy, .eggCopyDouble, .eggCopyTriple {
   padding:7px;
   display: flex;
   flex-direction: column;
@@ -73,8 +94,9 @@ code {
 
 }
 
-.eggImgWrapper, .eggImgWrapperTriple {
+.eggImgWrapper, .eggImgWrapperDouble, .eggImgWrapperTriple {
   width: 100%;
+  overflow-y: hidden;
 }
 
 .eggAniWrapper, .eggAniWrapperTriple {
@@ -87,15 +109,29 @@ code {
   overflow-y: hidden;
   flex-direction: column;
   overflow-y: hidden;
-
 }
 
-.buttonsWrapper {
+.eggAniWrapperDouble {
+  padding:5px;
+  width: 100%;
+  height:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.buttonsWrapper, .buttonsWrapperDouble {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  opacity: 1;
+  transition: all 1s linear;
+  transition-delay: 1s;
 }
 
 .nameh2 {
@@ -175,6 +211,7 @@ button {
   width: 60%;
   display: flex;
   justify-content: space-between;
+  overflow-y: hidden;
 }
 
 .rollsLeftWrapper {
@@ -311,6 +348,14 @@ button {
     /* border:1px solid black; */
   }
 
+  .eggOuterDouble, .eggOuterDoubleOpen {
+    width:40vw;
+  }
+
+  .eggInnerDouble {
+    width:100%;
+  }
+
   .eggInnerTriple {
     flex-direction: row;
     width: 100%;
@@ -334,11 +379,22 @@ button {
     width:50%;
   }
 
+  .buttonsWrapperDouble {
+    width:100%;
+  }
+
   .redTitleTriple {
     position: relative;
     top: 20px;
     left: 0px;
     font-size: 20px;
+  }
+  
+  .redTitleDouble {
+    position: relative;
+    top: 20px;
+    left: 0px;
+    font-size: 25px;
   }
 
   .nameh2 {
@@ -481,6 +537,22 @@ button {
 
 }
 
+@media only screen and (max-width:768px) {
+  .eggOuterDouble {
+    width: 50vw;
+    height:auto;
+  }
+  
+  .eggOuterDoubleOpen {
+    width: 450px;
+    height:auto;
+  }
+
+  .eggInnerDoubleOpen {
+    width:100%;
+  }
+}
+
 @media only screen and (max-width:500px) {
 
   .eggOuterTriple {
@@ -492,6 +564,10 @@ button {
 
   .eggOuter {
     width:100%;
+  }
+
+  .eggOuterDoubleOpen {
+    width: 100vw;
   }
 
   .redTitle {
