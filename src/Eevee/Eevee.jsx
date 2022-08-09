@@ -89,42 +89,53 @@ export default function Eevee({
         className='parallaxBackgroundEevee'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}
       ></div>
-      <div className='eeveeDataWrapper pkmDisplay'>
-        <h3>Who is your</h3>
-        <h1 className='cardTitleSingle'>Eevee Type?</h1>
-        <div className='cardImgWrapperSingle'>
-          {loading ? (
-            <>
-              <PokeballAnimation />
-            </>
-          ) : (
-            <>
-              <img
-                src={eevee.sprites.other["official-artwork"].front_default}
-                className='monImgSingle'
-              />
-              <h2 className='eggh2'>{eevee.name}</h2>
-            </>
-          )}
-        </div>
-        <button
-          className='add'
-          onClick={() => addToParty(eevee)}
-          disabled={addEeveeDisabled}
-        >
-          Add to Party!
-        </button>
-        <div className='reRollWrapper'>
-          <button
-            className='reRoll'
-            onClick={() => getEeveelution() && reRollButton()}
-            disabled={eeveeRollDisabled}
-          >
-            Evolve!
-          </button>
-          <div className='rollsLeftWrapper'>
-            <h1 className='rollCounth1'>{eeveeRollCount}</h1>
-            <div className='rollsLeftText'>{rollMessage}</div>
+
+      <div className='eggOuter'>
+        <div className='redTitle'>Eevee</div>
+        <div className='eggInner'>
+          <div className='eggCopy'>
+            <div className='eggImgWrapper'>
+              <div className='eggAniWrapper'>
+                {loading ? (
+                  <>
+                    <PokeballAnimation />
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={
+                        eevee.sprites.other["official-artwork"].front_default
+                      }
+                      className='eeveeImg'
+                    />
+                    <h2 className='nameh2'>{eevee.name}</h2>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <button
+              className='add'
+              onClick={() => addToParty(eevee)}
+              disabled={addEeveeDisabled}
+            >
+              Add to Party!
+            </button>
+            <div className='reRollWrapper'>
+              <button
+                className='reRoll'
+                onClick={() => getEeveelution() && reRollButton()}
+                disabled={eeveeRollDisabled}
+              >
+                Evolve!
+              </button>
+              <div className='rollsLeftWrapper'>
+                <h1 className='rollCounth1'>{eeveeRollCount}</h1>
+                <div className='rollsLeftText'>{rollMessage}</div>
+              </div>
+            </div>
+
+            {/* end copy  */}
           </div>
         </div>
       </div>

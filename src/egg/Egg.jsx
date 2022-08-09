@@ -24,7 +24,7 @@ export default function Egg({
   );
   const [hatchAni, setHatchAni] = useState();
   const [isHatched, setIsHatched] = useState(false);
-  //   const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState();
   const disabled = true;
 
   const fetchEggs = async () => {
@@ -71,20 +71,22 @@ export default function Egg({
   };
 
   const hatch = () => {
-    setHatchAni({
-      opacity: 0,
-    });
-    setTimeout(() => {
-      setEgg(eggArray[Math.floor(Math.random() * eggArray.length)]);
-      setIsHatched(true);
-      setEggRollDisabled(eggRollCount === 1 ? true : false);
-      setAddEggDisabled(false);
+    if (eggRollDisabled === true) {
       setHatchAni({
-        opacity: 1,
+        opacity: 0,
       });
-    }, 1000);
-
-    if (eggRollDisabled === false) {
+      setTimeout(() => {
+        setEgg(eggArray[Math.floor(Math.random() * eggArray.length)]);
+        setIsHatched(true);
+        setEggRollDisabled(eggRollCount === 1 ? true : false);
+        setAddEggDisabled(false);
+        setHatchAni({
+          opacity: 1,
+        });
+      }, 1000);
+    } else if (eggRollDisabled === false) {
+      setLoading(true);
+      setEgg(eggArray[Math.floor(Math.random() * eggArray.length)]);
       setEggRollCount(eggRollCount - 1);
       if (eggRollCount === 2) {
         setRollMessage(
@@ -103,6 +105,9 @@ export default function Egg({
         );
         setEggRollDisabled(true);
       }
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   };
 
@@ -118,15 +123,40 @@ export default function Egg({
               onClick={isHatched === true ? disabled : hatch}
             >
               <div className='eggAniWrapper'>
-                <img
-                  src={
-                    isHatched === true
-                      ? egg.sprites.other["official-artwork"].front_default
-                      : egg
-                  }
-                  className={isHatched === true ? "eggStatic" : "eggAnimation"}
-                  style={hatchAni}
-                />
+                {isHatched === true ? (
+                  loading ? (
+                    <>
+                      <PokeballAnimation />
+                    </>
+                  ) : (
+                    <>
+                      <img
+                        src={
+                          isHatched === true
+                            ? egg.sprites.other["official-artwork"]
+                                .front_default
+                            : egg
+                        }
+                        className={
+                          isHatched === true ? "eggStatic" : "eggAnimation"
+                        }
+                        style={hatchAni}
+                      />
+                    </>
+                  )
+                ) : (
+                  <img
+                    src={
+                      isHatched === true
+                        ? egg.sprites.other["official-artwork"].front_default
+                        : egg
+                    }
+                    className={
+                      isHatched === true ? "eggStatic" : "eggAnimation"
+                    }
+                    style={hatchAni}
+                  />
+                )}
               </div>
             </div>
             <h2
