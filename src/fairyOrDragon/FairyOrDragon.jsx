@@ -250,6 +250,7 @@ export default function FairyOrDragon({
                       className='add'
                       onClick={() => addToParty(fairyMon)}
                       disabled={addFodDisabled}
+                      style={fadeIn}
                     >
                       Add to Party!
                     </button>

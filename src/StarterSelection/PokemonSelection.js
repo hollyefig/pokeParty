@@ -245,7 +245,7 @@ export default function PokemonSelection({
                 <div className='reRollWrapper'>
                   <button
                     className='reRoll'
-                    onClick={() => getFireTypeData() && refresh("FireState")}
+                    onClick={() => getFireTypeData() && refresh("fireState")}
                     disabled={rollDisabled}
                   >
                     ReRoll

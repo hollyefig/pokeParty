@@ -1,0 +1,200 @@
+.chooseMonWrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(218, 236, 245);
+    flex-direction: row;
+    overflow-y: hidden;
+
+}
+
+.parallaxBackgroundChoose {
+    background-image: url(https://images.nintendolife.com/ae760a445a42b/pokemon-centre-for-kanto-redrawn.large.jpg);
+    background-position-y: 0%;
+    background-position-x: 50%;
+    background-size: cover;
+    height: 200vh;
+    width: 100%;
+    position: relative;
+    top:105vh;
+    opacity:.3;
+    overflow-y: hidden;
+}
+
+.form {
+    margin-top:20px;
+    width: 400px;
+    padding:0px 20px 0px 0px;
+    border-right:1px solid #ddd;
+}
+
+.instruction {
+    font-weight: bold;
+    width: 100%;
+    padding:10px;
+    border-bottom: 1px solid #aaa;
+    font-size: 20px;
+}
+
+.radioWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radioWrapper {
+    margin:15px 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.radioWrapper input {
+    display: none;
+}
+
+.radioButton {
+    opacity: 0.3;
+}
+
+.radioButton label {
+    color: #fff;
+    padding:5px 15px;
+    border-radius: 10px;
+    margin:5px 0px;
+    cursor: pointer;
+    display: block;
+
+}
+
+.selected {
+    opacity:1;
+    font-weight: bold;
+}
+
+.radioButton input {
+    cursor: pointer;
+}
+
+.textWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+    width: 100%;
+}
+
+.letter {
+    padding:20px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    line-height: 15px;
+    font-weight: 700;
+    border:none;
+    text-transform: capitalize;
+    background-color: rgb(248, 248, 248);
+}
+
+.letter::placeholder {
+    font-style: italic;
+    color:#aaa;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.submit {
+    width: 100%;
+    cursor: pointer;
+    background-color: rgb(206, 29, 29);
+    color:#fff;
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: 2px 2px 0px rgb(177, 15, 15);
+    position: relative;
+}
+
+.submit:active {
+    top:2px;
+    left:2px;
+}
+
+.submit:disabled {
+    opacity: .3;
+    cursor:default;
+    position: relative;
+    top:0px;
+    left: 0px;
+}
+
+
+
+.monDisplay {
+    padding:7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    overflow-y: hidden;
+  }
+
+  .results {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    overflow-y: hidden;
+  }
+
+  .bold {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0px 0px -10px 0px;
+    padding: 0px 0px 3px 0px;
+  }
+
+  .monDisplayImg {
+    height: auto;
+    width: 100%;
+
+  }
+
+  .errorMsg {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media only screen and (max-width:768px) {
+
+    .chooseMonWrapper {
+        height: 200vh;
+        
+    }
+
+    .parallaxBackgroundChoose {
+        height: 400vh;
+    }
+
+    .form {
+        width: 100%;
+        padding:0px 0px 0px 0px;
+        border-right:none;
+    }
+
+    .monDisplay {
+        width: 100%;
+    }
+
+    .monDisplayImg {
+        width: 260px;
+    }
+
+  }

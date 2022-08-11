@@ -42,6 +42,17 @@ code {
   transition: all .2s ease-in-out;
 }
 
+.eggOuterChoose {
+  /* border:1px solid black; */
+  padding:20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  position: absolute;
+}
+
 .eggOuter {
   width:425px;
 }
@@ -74,7 +85,17 @@ code {
   padding:20px;
   border-radius: 20px;
   overflow-y: hidden;
+}
 
+.eggInnerChoose {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding:20px;
+  border-radius: 20px;
+  overflow-y: hidden;
 }
 
 .eggInnerDouble {
@@ -91,7 +112,6 @@ code {
   align-items: center;
   width: 100%;
   overflow-y: hidden;
-
 }
 
 .eggImgWrapper, .eggImgWrapperDouble, .eggImgWrapperTriple {
@@ -123,7 +143,7 @@ code {
   overflow-y: hidden;
 }
 
-.buttonsWrapper, .buttonsWrapperDouble {
+.buttonsWrapper, .buttonsWrapperDouble, .buttonsWrapperChoose {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -177,6 +197,7 @@ button {
   cursor: pointer;
   border: 3px solid rgb(184, 23, 23);
   overflow-y: hidden;
+  
 }
 
 .add:hover {
@@ -278,55 +299,6 @@ button {
   100% {transform: rotate(360deg);}
 }
 
-.pkmDisplay {
-    background-color: #fff;
-    padding:20px 10px;
-    border-radius: 20px;
-}
-
-.cardTitle, .cardTitleSingle, .cardTitleDouble {
-    font-size:3vw;
-    color:rgb(187, 19, 19);
-    text-shadow: 2px 2px 0px #ddd;
-    padding:0px;
-    margin:0px;
-    overflow-y: hidden;
-    text-transform: capitalize;
-}
-
-.cardImgWrapper, .cardImgWrapperSingle {
-  text-align: center;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 310px;
-}
-
-
-.cardImgWrapper h2, .cardImgWrapperSingle h2 {
-  text-transform: capitalize;
-  overflow-y: hidden;
-}
-
-.monImg, .monImgSingle, .monImgDouble {
-  height:270px;
-}
-
-.cardMobileFlex {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.cardTextButtonMobile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .buttonWrapper {
     width: 100%;
@@ -336,9 +308,6 @@ button {
     align-items: center;
 }
 
-.mobileShow {
-  display:none;
-}
 
 @media only screen and (max-width:1240px) {
 
@@ -381,6 +350,9 @@ button {
 
   .buttonsWrapperDouble {
     width:100%;
+    transition: all 2s linear;
+    opacity:0;
+    transition-delay: 5s;
   }
 
   .redTitleTriple {
@@ -401,54 +373,7 @@ button {
     padding:10px 0px;
   }
 
-  .pkmDisplay {
-    padding:10px 10px;
-}
-
-  .cardTitle {
-    font-size:7.5vw;
-    overflow-y: hidden;
-    margin:0px 0px 5px 0px;
-  }
   
-  .cardTitleSingle {
-    font-size:5.5vw;
-    overflow-y: hidden;
-    margin:0px 0px 5px 0px;
-  }
-
-  .cardMobileFlex {
-    flex-direction: row;
-    align-items: flex-start;
-    height: 100%;
-  }
-  
-  .cardImgWrapper {
-    width: 50%;
-    height: 90%;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .cardImgWrapperSingle {
-    width: 90%;
-    height: 90%;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .cardImgWrapperSingle h2 {
-    font-size: 3vh;
-    line-height: 5vh;
-  }
-
-  .cardTextButtonMobile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
-    width: 70%;
-  }
 
   .buttonWrapper {
     flex-direction: row;
@@ -456,20 +381,7 @@ button {
     display: none;
 }
 
-  .mobileShow {
-    display:flex;
-    flex-direction: column;
-    width:100%;
-  }
-
-   .monImg {
-    height:90%;
-  }
   
-  .monImgSingle, .monImgDouble {
-    width:240px;
-    height: auto;
-  }
 
   .reRollWrapper {
     align-items: center;
@@ -550,6 +462,22 @@ button {
 
   .eggInnerDoubleOpen {
     width:100%;
+  }
+
+  .eggOuterChoose {
+    /* border:1px solid black; */
+    padding:10px;
+    flex-direction: column;
+  }
+
+  .eggInnerChoose {
+    flex-direction: column;
+    padding:10px;
+  }
+
+  .buttonsWrapperChoose {
+    width: 100%;
+  
   }
 }
 

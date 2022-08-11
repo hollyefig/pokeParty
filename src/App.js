@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { getMon, getType } from "./APIcalls";
-import DownArrow from "./downArrow/DownArrow";
+import ChooseMon from "./chooseMon/ChooseMon";
 import Eevee from "./Eevee/Eevee";
 import Egg from "./egg/Egg";
 import FairyOrDragon from "./fairyOrDragon/FairyOrDragon";
@@ -27,29 +27,6 @@ function App() {
     const fetch = await getMon(monData);
     setRandomMon(fetch);
     console.log("fetch", fetch);
-  };
-
-  // for down arrow button
-  const [fadeIn, setFadeIn] = useState({
-    opacity: 0,
-    paddingTop: "20px",
-    transitionDelay: "2s",
-    transition: "all 1s ease-in-out",
-  });
-
-  const windowHeight = window.innerHeight;
-  // for scrolling to next section
-  const scrolling = () => {
-    window.scrollBy({
-      top: windowHeight,
-      behavior: "smooth",
-    });
-    setFadeIn({
-      opacity: 0,
-      transitionDelay: "0s",
-      height: "0px",
-      padding: "0px",
-    });
   };
 
   // set state for party list
@@ -85,6 +62,10 @@ function App() {
   const [addEggDisabled, setAddEggDisabled] = useState(true);
   const [eggRollDisabled, setEggRollDisabled] = useState(true);
 
+  const [chooseRollCount, setChooseRollCount] = useState(3);
+  const [addChooseDisabled, setAddChooseDisabled] = useState(false);
+  const [chooseRollDisabled, setChooseRollDisabled] = useState(false);
+
   const [rollMessage, setRollMessage] = useState(
     <>
       <p>Rolls</p>
@@ -112,13 +93,6 @@ function App() {
         overflow: "hidden",
         height: "0px",
       });
-      // for arrow
-      setFadeIn({
-        opacity: 1,
-        transitionDelay: "0s",
-        height: "115px",
-        padding: "10px",
-      });
     } else if (party.slot2[0] === "" && party.slot2[1] === "") {
       setParty({
         ...party,
@@ -133,13 +107,6 @@ function App() {
       setBirdRollDisabled(true);
       setBirdRollCount(0);
       setAddBirdDisabled(true);
-      // for arrow
-      setFadeIn({
-        opacity: 1,
-        transitionDelay: "0s",
-        height: "115px",
-        padding: "10px",
-      });
     } else if (party.slot3[0] === "" && party.slot3[1] === "") {
       setParty({
         ...party,
@@ -154,13 +121,6 @@ function App() {
       setFodRollDisabled(true);
       setFodRollCount(0);
       setAddFodDisabled(true);
-      // for arrow
-      setFadeIn({
-        opacity: 1,
-        transitionDelay: "0s",
-        height: "115px",
-        padding: "10px",
-      });
     } else if (party.slot4[0] === "" && party.slot4[1] === "") {
       setParty({
         ...party,
@@ -175,13 +135,6 @@ function App() {
       setEeveeRollDisabled(true);
       setEeveeRollCount(0);
       setAddEeveeDisabled(true);
-      // for arrow
-      setFadeIn({
-        opacity: 1,
-        transitionDelay: "0s",
-        height: "115px",
-        padding: "10px",
-      });
     } else if (party.slot5[0] === "" && party.slot5[1] === "") {
       setParty({
         ...party,
@@ -199,9 +152,17 @@ function App() {
     } else if (party.slot6[0] === "" && party.slot6[1] === "") {
       setParty({
         ...party,
-        slot6: mon.name,
+        slot6: [
+          mon.name,
+          mon.sprites.versions["generation-vii"].icons.front_default === null
+            ? mon.sprites.versions["generation-viii"].icons.front_default
+            : mon.sprites.versions["generation-vii"].icons.front_default,
+        ],
       });
       setCount(count + 1);
+      setChooseRollDisabled(true);
+      setChooseRollCount(0);
+      setAddChooseDisabled(true);
     }
   };
 
@@ -210,7 +171,6 @@ function App() {
   return (
     <div className='App'>
       <PartyList party={party} count={count} listEmptyMsg={listEmptyMsg} />
-      <DownArrow scrolling={scrolling} fadeIn={fadeIn} setFadeIn={setFadeIn} />
       <Header
         addToParty={addToParty}
         addStarterDisabled={addStarterDisabled}
@@ -265,6 +225,18 @@ function App() {
         setAddEggDisabled={setAddEggDisabled}
         eggRollDisabled={eggRollDisabled}
         setEggRollDisabled={setEggRollDisabled}
+      />
+
+      <ChooseMon
+        addToParty={addToParty}
+        rollMessage={rollMessage}
+        setRollMessage={setRollMessage}
+        chooseRollCount={chooseRollCount}
+        setChooseRollCount={setChooseRollCount}
+        addChooseDisabled={addChooseDisabled}
+        setAddChooseDisabled={setAddChooseDisabled}
+        chooseRollDisabled={chooseRollDisabled}
+        setChooseRollDisabled={setChooseRollDisabled}
       />
       {/* <Test
         getRandomMon={getRandomMon}
