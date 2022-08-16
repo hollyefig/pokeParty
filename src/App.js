@@ -7,6 +7,7 @@ import FairyOrDragon from "./fairyOrDragon/FairyOrDragon";
 import Bird from "./flying/Bird";
 import Header from "./header/Header";
 import PartyList from "./PartyList/PartyList";
+import TrainerInfo from "./trainerInfo/TrainerInfo";
 // import Test from "./Test";
 
 function App() {
@@ -31,12 +32,12 @@ function App() {
 
   // set state for party list
   const [party, setParty] = useState({
-    slot1: ["", ""],
-    slot2: ["", ""],
-    slot3: ["", ""],
-    slot4: ["", ""],
-    slot5: ["", ""],
-    slot6: ["", ""],
+    slot1: ["", "", ""],
+    slot2: ["", "", ""],
+    slot3: ["", "", ""],
+    slot4: ["", "", ""],
+    slot5: ["", "", ""],
+    slot6: ["", "", ""],
   });
 
   const [listEmptyMsg, setListEmptyMsg] = useState();
@@ -73,6 +74,8 @@ function App() {
     </>
   );
 
+  const [listFull, setListFull] = useState(false);
+
   // add pokemon to party list function
   const addToParty = (mon) => {
     if (party.slot1[0] === "" && party.slot1[1] === "" && count === 0) {
@@ -83,6 +86,7 @@ function App() {
           mon.sprites.versions["generation-vii"].icons.front_default === null
             ? mon.sprites.versions["generation-viii"].icons.front_default
             : mon.sprites.versions["generation-vii"].icons.front_default,
+          mon,
         ],
       });
       setCount(count + 1);
@@ -101,6 +105,7 @@ function App() {
           mon.sprites.versions["generation-vii"].icons.front_default === null
             ? mon.sprites.versions["generation-viii"].icons.front_default
             : mon.sprites.versions["generation-vii"].icons.front_default,
+          mon,
         ],
       });
       setCount(count + 1);
@@ -115,6 +120,7 @@ function App() {
           mon.sprites.versions["generation-vii"].icons.front_default === null
             ? mon.sprites.versions["generation-viii"].icons.front_default
             : mon.sprites.versions["generation-vii"].icons.front_default,
+          mon,
         ],
       });
       setCount(count + 1);
@@ -129,6 +135,7 @@ function App() {
           mon.sprites.versions["generation-vii"].icons.front_default === null
             ? mon.sprites.versions["generation-viii"].icons.front_default
             : mon.sprites.versions["generation-vii"].icons.front_default,
+          mon,
         ],
       });
       setCount(count + 1);
@@ -143,6 +150,7 @@ function App() {
           mon.sprites.versions["generation-vii"].icons.front_default === null
             ? mon.sprites.versions["generation-viii"].icons.front_default
             : mon.sprites.versions["generation-vii"].icons.front_default,
+          mon,
         ],
       });
       setCount(count + 1);
@@ -157,12 +165,14 @@ function App() {
           mon.sprites.versions["generation-vii"].icons.front_default === null
             ? mon.sprites.versions["generation-viii"].icons.front_default
             : mon.sprites.versions["generation-vii"].icons.front_default,
+          mon,
         ],
       });
       setCount(count + 1);
       setChooseRollDisabled(true);
       setChooseRollCount(0);
       setAddChooseDisabled(true);
+      setListFull(true);
     }
   };
 
@@ -234,10 +244,11 @@ function App() {
         chooseRollCount={chooseRollCount}
         setChooseRollCount={setChooseRollCount}
         addChooseDisabled={addChooseDisabled}
-        setAddChooseDisabled={setAddChooseDisabled}
         chooseRollDisabled={chooseRollDisabled}
         setChooseRollDisabled={setChooseRollDisabled}
       />
+
+      <TrainerInfo party={party} listFull={listFull} />
       {/* <Test
         getRandomMon={getRandomMon}
         getRandomType={getRandomType}

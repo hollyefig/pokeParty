@@ -84,7 +84,7 @@ export default function Eevee({
   }, []);
 
   return (
-    <div className='eeveeWrapper'>
+    <div className='eeveeWrapper sectionContainer'>
       <div
         className='parallaxBackgroundEevee'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}

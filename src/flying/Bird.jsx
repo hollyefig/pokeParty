@@ -15,6 +15,7 @@ export default function Bird({
 }) {
   const [flyingMon, setFlyingMon] = useState();
   const [loading, setLoading] = useState(true);
+  const [letterValue, setLetterValue] = useState();
 
   //get flying data
   const getRandomFlyingData = async () => {
@@ -73,7 +74,7 @@ export default function Bird({
   }, []);
 
   return (
-    <div className='birdWrapper'>
+    <div className='birdWrapper sectionContainer'>
       <div
         className='parallaxBackgroundBird'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}

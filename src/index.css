@@ -12,6 +12,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App{
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.App .sectionContainer {
+  scroll-snap-align: start;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

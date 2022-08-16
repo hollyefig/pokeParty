@@ -130,7 +130,7 @@ export default function Egg({
   }, []);
 
   return (
-    <div className='eggWrapper'>
+    <div className='eggWrapper sectionContainer'>
       <div
         className='parallaxBackgroundEgg'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}

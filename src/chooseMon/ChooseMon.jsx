@@ -11,7 +11,6 @@ export default function ChooseMon({
   chooseRollCount,
   setChooseRollCount,
   addChooseDisabled,
-  setAddChooseDisabled,
   chooseRollDisabled,
   setChooseRollDisabled,
 }) {
@@ -100,7 +99,7 @@ export default function ChooseMon({
   }, []);
 
   return (
-    <div className='chooseMonWrapper'>
+    <div className='chooseMonWrapper sectionContainer'>
       <div
         className='parallaxBackgroundChoose'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}

@@ -141,7 +141,7 @@ export default function PokemonSelection({
   };
 
   return (
-    <div className='wrapper'>
+    <div className='wrapper sectionContainer'>
       <div className='grassWrapper'>
         <div className='eggOuterTriple'>
           <div className='redTitleTriple'>Grass Type</div>

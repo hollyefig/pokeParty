@@ -54,9 +54,6 @@ export default function FairyOrDragon({
     flex: 1,
   });
 
-  const [dragonQuestionWrapper, setDragonQuestionWrapper] = useState();
-  const [dragonOuterWrapperChange, setDragonOuterWrapperChange] = useState();
-
   //fairy data
   const [fairyMon, setFairyMon] = useState();
   const [loading, setLoading] = useState(true);
@@ -191,7 +188,7 @@ export default function FairyOrDragon({
   };
 
   return (
-    <div className='fodWrapper'>
+    <div className='fodWrapper sectionContainer'>
       {/* begin fairy section  */}
       <div className='fairyWrapper' style={fairyFlexStyle}>
         <div>
