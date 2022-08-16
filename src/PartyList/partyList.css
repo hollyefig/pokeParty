@@ -8,6 +8,7 @@
     height:0px;
     display: flex;
     justify-content: right;
+    -webkit-justify-content: right;
     transition: all .5s ease-in-out;
     transition-delay: 2s;
 } 

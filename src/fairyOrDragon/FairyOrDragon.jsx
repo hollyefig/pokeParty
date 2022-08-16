@@ -135,7 +135,7 @@ export default function FairyOrDragon({
   const toFairy = () => {
     setTimeout(() => {
       setHeightChange({
-        height: "550px",
+        height: "auto",
       });
       setFadeOut({
         opacity: 0,
@@ -163,7 +163,7 @@ export default function FairyOrDragon({
   const toDragon = () => {
     setTimeout(() => {
       setHeightChange({
-        height: "550px",
+        height: "auto",
       });
       setFadeOut({
         opacity: 0,
