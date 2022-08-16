@@ -15,7 +15,6 @@ export default function Bird({
 }) {
   const [flyingMon, setFlyingMon] = useState();
   const [loading, setLoading] = useState(true);
-  const [letterValue, setLetterValue] = useState();
 
   //get flying data
   const getRandomFlyingData = async () => {

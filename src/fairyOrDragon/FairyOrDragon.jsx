@@ -147,7 +147,7 @@ export default function FairyOrDragon({
       setFadeIn({
         opacity: 1,
       });
-    }, 2200);
+    }, 2000);
 
     setDragonFlexStyle({
       flex: 0,
@@ -175,7 +175,7 @@ export default function FairyOrDragon({
       setFadeIn({
         opacity: 1,
       });
-    }, 2200);
+    }, 2000);
 
     setFairyFlexStyle({
       flex: 0,

@@ -54,7 +54,7 @@ export default function TrainerInfo({ party, listFull }) {
         opacity: 1,
         padding: "20px",
       });
-    }, 1500);
+    }, 1000);
   };
 
   // parallax scrolling

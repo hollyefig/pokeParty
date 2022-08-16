@@ -24,13 +24,15 @@ export default function PokemonSelection({
     getWaterTypeData();
   }, []);
 
-  const [loading, setLoading] = useState(true);
+  const [grassLoading, setGrassLoading] = useState(true);
+  const [fireLoading, setFireLoading] = useState(true);
+  const [waterLoading, setWaterLoading] = useState(true);
   const [grassTypeMon, setGrassTypeMon] = useState();
   const [fireTypeMon, setFireTypeMon] = useState();
   const [waterTypeMon, setWaterTypeMon] = useState();
 
   const getGrassTypeData = async () => {
-    setLoading(true);
+    setGrassLoading(true);
     //get array of grass type data
     const res = await getType(12);
     //get array of only grass pokemon
@@ -52,12 +54,12 @@ export default function PokemonSelection({
     const fetchedMon = await getGrassMonData(url);
     setGrassTypeMon(fetchedMon);
     setTimeout(() => {
-      setLoading(false);
+      setGrassLoading(false);
     }, 2000);
   };
 
   const getFireTypeData = async () => {
-    setLoading(true);
+    setFireLoading(true);
     const res = await getType(10);
     const obj = res.pokemon;
     const filteredObj = obj.filter(
@@ -76,12 +78,12 @@ export default function PokemonSelection({
     const fetchedMon = await getFireMonData(url);
     setFireTypeMon(fetchedMon);
     setTimeout(() => {
-      setLoading(false);
+      setFireLoading(false);
     }, 2000);
   };
 
   const getWaterTypeData = async () => {
-    setLoading(true);
+    setWaterLoading(true);
     const res = await getType(11);
     const obj = res.pokemon;
     const filteredObj = obj.filter(
@@ -100,7 +102,7 @@ export default function PokemonSelection({
     const fetchedMon = await getWaterMonData(url);
     setWaterTypeMon(fetchedMon);
     setTimeout(() => {
-      setLoading(false);
+      setWaterLoading(false);
     }, 2000);
   };
 
@@ -129,15 +131,6 @@ export default function PokemonSelection({
         </>
       );
     }
-    if (monState === "grassState") {
-      console.log(`grass roll has been clicked`);
-    }
-    if (monState === "fireState") {
-      console.log(`fire roll has been clicked`);
-    }
-    if (monState === "waterState") {
-      console.log(`Water roll has been clicked`);
-    }
   };
 
   return (
@@ -149,7 +142,7 @@ export default function PokemonSelection({
             <div className='eggCopyTriple'>
               <div className='eggImgWrapperTriple'>
                 <div className='eggAniWrapperTriple'>
-                  {loading ? (
+                  {grassLoading ? (
                     <>
                       <PokeballAnimation />
                     </>
@@ -167,7 +160,7 @@ export default function PokemonSelection({
               </div>
 
               <div className='buttonsWrapper'>
-                {loading ? (
+                {grassLoading ? (
                   <h2 className='nameh2'>&nbsp;</h2>
                 ) : (
                   <h2 className='nameh2'>{grassTypeMon.name}</h2>
@@ -211,7 +204,7 @@ export default function PokemonSelection({
             <div className='eggCopyTriple'>
               <div className='eggImgWrapperTriple'>
                 <div className='eggAniWrapperTriple'>
-                  {loading ? (
+                  {fireLoading ? (
                     <>
                       <PokeballAnimation />
                     </>
@@ -230,7 +223,7 @@ export default function PokemonSelection({
               </div>
 
               <div className='buttonsWrapper'>
-                {loading ? (
+                {fireLoading ? (
                   <h2 className='nameh2'>&nbsp;</h2>
                 ) : (
                   <h2 className='nameh2'>{fireTypeMon.name}</h2>
@@ -274,7 +267,7 @@ export default function PokemonSelection({
             <div className='eggCopyTriple'>
               <div className='eggImgWrapperTriple'>
                 <div className='eggAniWrapperTriple'>
-                  {loading ? (
+                  {waterLoading ? (
                     <>
                       <PokeballAnimation />
                     </>
@@ -293,7 +286,7 @@ export default function PokemonSelection({
               </div>
 
               <div className='buttonsWrapper'>
-                {loading ? (
+                {waterLoading ? (
                   <h2 className='nameh2'>&nbsp;</h2>
                 ) : (
                   <h2 className='nameh2'>{waterTypeMon.name}</h2>
