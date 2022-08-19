@@ -11,6 +11,10 @@ import TrainerInfo from "./trainerInfo/TrainerInfo";
 // import Test from "./Test";
 
 function App() {
+  // if (window.scrollTo(0, 200)) {
+  //   console.log("window area has been scrolled to");
+  // }
+
   const [randomType, setRandomType] = useState();
   const [randomMon, setRandomMon] = useState();
 

@@ -24,7 +24,7 @@ export default function TrainerInfo({ party, listFull }) {
     5: "",
   });
 
-  console.log("nickname party", nickNameParty[2]);
+  //   console.log("nickname party", nickNameParty[2]);
 
   const [opacity, setOpacity] = useState(1);
   const [height, setHeight] = useState();
