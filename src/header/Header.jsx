@@ -43,7 +43,7 @@ export default function Header({
       ></div>
 
       <div className='title'>
-        <h2 style={fadeIn}>Randomize Your </h2>
+        <h2 style={fadeIn}>Assemble Your </h2>
         <h1 style={fadeIn}>Pokemon Party</h1>
       </div>
 

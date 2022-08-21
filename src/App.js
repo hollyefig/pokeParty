@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { getMon, getType } from "./APIcalls";
 import ChooseMon from "./chooseMon/ChooseMon";
 import Eevee from "./Eevee/Eevee";
@@ -11,10 +11,6 @@ import TrainerInfo from "./trainerInfo/TrainerInfo";
 // import Test from "./Test";
 
 function App() {
-  // if (window.scrollTo(0, 200)) {
-  //   console.log("window area has been scrolled to");
-  // }
-
   const [randomType, setRandomType] = useState();
   const [randomMon, setRandomMon] = useState();
 
@@ -33,6 +29,26 @@ function App() {
     setRandomMon(fetch);
     console.log("fetch", fetch);
   };
+
+  //make party list disappear on scroll
+  const [isVisible, setIsVisible] = useState(true);
+
+  const listenToScroll = () => {
+    let heightToHideFrom = 5200;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+      isVisible && setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
 
   // set state for party list
   const [party, setParty] = useState({
@@ -184,7 +200,9 @@ function App() {
 
   return (
     <div className='App'>
-      <PartyList party={party} count={count} listEmptyMsg={listEmptyMsg} />
+      {isVisible && (
+        <PartyList party={party} count={count} listEmptyMsg={listEmptyMsg} />
+      )}
       <Header
         addToParty={addToParty}
         addStarterDisabled={addStarterDisabled}
