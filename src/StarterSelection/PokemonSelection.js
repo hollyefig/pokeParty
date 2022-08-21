@@ -7,6 +7,7 @@ import {
   getType,
 } from "../APIcalls";
 import PokeballAnimation from "../PokeballAnimation";
+import Msg from "./Msg";
 
 export default function PokemonSelection({
   addToParty,
@@ -133,8 +134,18 @@ export default function PokemonSelection({
     }
   };
 
+  //for intro message
+  const [msgDisplay, setMsgDisplay] = useState(true);
+
+  const clearMsg = () => {
+    console.log("message clear has been read");
+    setMsgDisplay(false);
+  };
+
   return (
     <div className='wrapper sectionContainer'>
+      {msgDisplay && <Msg clearMsg={clearMsg} />}
+
       <div className='grassWrapper'>
         <div className='eggOuterTriple'>
           <div className='redTitleTriple'>Grass Type</div>

@@ -12,12 +12,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App{
+html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
 
-.App .sectionContainer {
+html .sectionContainer {
   scroll-snap-align: start;
 }
 

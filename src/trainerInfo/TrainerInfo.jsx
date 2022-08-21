@@ -3,7 +3,7 @@ import "./trainerInfo.css";
 import { trainerData } from "./trainerData";
 import NicknameInput from "./NicknameInput";
 
-export default function TrainerInfo({ party, listFull }) {
+export default function TrainerInfo({ party, listFull, finalSection }) {
   // trainer info
   const [trainerName, setTrainerName] = useState();
   const [selectedTrainer, setSelectedTrainer] = useState();
@@ -68,7 +68,7 @@ export default function TrainerInfo({ party, listFull }) {
   }, []);
 
   return (
-    <div className='trainerInfoWrapper sectionContainer'>
+    <div className='trainerInfoWrapper sectionContainer' ref={finalSection}>
       <div
         className='parallaxBackgroundTrainer'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}

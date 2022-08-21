@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getMon, getType } from "./APIcalls";
 import ChooseMon from "./chooseMon/ChooseMon";
 import Eevee from "./Eevee/Eevee";
@@ -31,12 +31,18 @@ function App() {
   };
 
   //make party list disappear on scroll
+
   const [isVisible, setIsVisible] = useState(true);
+  const finalSection = useRef(null);
 
   const listenToScroll = () => {
-    let heightToHideFrom = 5200;
+    const docu = document.getElementById("App");
+    console.log("document height", docu.offsetHeight);
+    let heightToHideFrom =
+      docu.offsetHeight - finalSection.current.offsetHeight * 1.2;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
+    // console.log("winScroll", winScroll);
 
     if (winScroll > heightToHideFrom) {
       isVisible && setIsVisible(false);
@@ -199,7 +205,7 @@ function App() {
   console.log("party :", party);
 
   return (
-    <div className='App'>
+    <div className='App' id='App'>
       {isVisible && (
         <PartyList party={party} count={count} listEmptyMsg={listEmptyMsg} />
       )}
@@ -270,7 +276,11 @@ function App() {
         setChooseRollDisabled={setChooseRollDisabled}
       />
 
-      <TrainerInfo party={party} listFull={listFull} />
+      <TrainerInfo
+        party={party}
+        listFull={listFull}
+        finalSection={finalSection}
+      />
       {/* <Test
         getRandomMon={getRandomMon}
         getRandomType={getRandomType}
