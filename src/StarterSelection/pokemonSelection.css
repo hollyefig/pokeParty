@@ -41,7 +41,7 @@
     background-color: #fff;
     box-shadow: 2px 2px 4px #888;
     border-radius: 20px;
-    transition:all 1s linear;
+    transition:all .2s linear;
     padding:20px;
     font-size:18px;
     text-align: center;
@@ -129,6 +129,10 @@
 
     .wrapper {
         margin-top: 0px;
+    }
+
+    .msg {
+        width: 90%;
     }
 
 }
