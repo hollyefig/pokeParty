@@ -98,8 +98,34 @@ export default function ChooseMon({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // tutorial message
+  const [msgDisplay, setMsgDisplay] = useState(true);
+
+  const chooseMonMsgFunc = () => {
+    setMsgDisplay(false);
+  };
+
   return (
     <div className='chooseMonWrapper sectionContainer'>
+      {/* tutorial message  */}
+      {msgDisplay && (
+        <div className='chooseMonMsgWrapper'>
+          <div className='chooseMonMsg'>
+            Here's your chance to get a Pokemon of your choice! Select your
+            desired <span style={{ fontWeight: "bold" }}>Type</span> and type in
+            the <span style={{ fontWeight: "bold" }}>First Letter</span> of your
+            desired Pokemon's name!
+            <button
+              className='chooseMonMsgButton'
+              onClick={() => chooseMonMsgFunc()}
+            >
+              <h3>Let's go!</h3>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* parallax BG  */}
       <div
         className='parallaxBackgroundChoose'
         style={{ transform: `translateY(${offSet * -0.2}px)` }}

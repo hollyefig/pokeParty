@@ -4,6 +4,47 @@
     flex-direction: row;
 }
 
+.fodMsgWrapper {
+    position: absolute;
+    z-index: 99;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.fodMsg {
+    background-color: #fff;
+    padding:20px;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 18px;
+    flex-direction: column;
+    display: inline-block;
+}
+
+.fodMsgButton {
+    overflow-y: hidden;
+    border:2px solid rgb(206, 29, 29);
+    background-color: transparent;
+    color:rgb(206, 29, 29);
+    margin:20px 0px 0px 0px;
+    padding:20px 0px;
+    cursor: pointer;
+    display: block;
+    margin:15px auto 0px auto;
+
+}
+
+.fodMsgButton:hover {
+    color:#fff;
+    background-color: rgb(206, 29, 29);
+}
+
 .fairyWrapper, .dragonWrapper {
     display: flex;
     flex-direction: column;
@@ -141,6 +182,10 @@
     .fairyDataWrapper h2, .dragonDataWrapper h2 {
         font-size: 3vw;
         line-height: 6vw;
+    }
+
+    .fodMsg {
+        width: 90%;
     }
 
 }

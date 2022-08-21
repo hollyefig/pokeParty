@@ -10,6 +10,48 @@
 
 }
 
+.chooseMonMsgWrapper {
+    position:absolute;
+    z-index: 99;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.chooseMonMsg {
+    background-color: #fff;
+    padding:20px;
+    border-radius: 20px;
+    width: 50%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.chooseMonMsgButton {
+    overflow-y: hidden;
+    border:2px solid rgb(206, 29, 29);
+    background-color: transparent;
+    color:rgb(206, 29, 29);
+    margin:20px 0px 0px 0px;
+    padding:20px 0px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: block;
+    margin:15px auto 0px auto;
+}
+
+.chooseMonMsgButton:hover {
+    color:#fff;
+    background-color: rgb(206, 29, 29);
+}
+
 .parallaxBackgroundChoose {
     background-image: url(https://images.nintendolife.com/ae760a445a42b/pokemon-centre-for-kanto-redrawn.large.jpg);
     background-position-y: 0%;
@@ -174,9 +216,12 @@
 
   @media only screen and (max-width:768px) {
 
+    .chooseMonMsg {
+        width: 90%;
+    }
+
     .chooseMonWrapper {
         height: 150vh;
-        
     }
 
     .parallaxBackgroundChoose {

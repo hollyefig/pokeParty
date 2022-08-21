@@ -187,8 +187,35 @@ export default function FairyOrDragon({
     });
   };
 
+  //tutorial message
+  const [clearMsg, setClearMsg] = useState(true);
+
+  const clearMsgFunc = () => {
+    setClearMsg(false);
+  };
+
   return (
     <div className='fodWrapper sectionContainer'>
+      {/* tutorial msg  */}
+      {clearMsg && (
+        <div className='fodMsgWrapper'>
+          <div className='fodMsg'>
+            Do you like{" "}
+            <span style={{ color: "#E18FBF", fontWeight: "bold" }}>
+              Fairies
+            </span>{" "}
+            or{" "}
+            <span style={{ color: "#AC8FE1", fontWeight: "bold" }}>
+              Dragons?
+            </span>{" "}
+            You can only choose one!
+            <button className='fodMsgButton' onClick={() => clearMsgFunc()}>
+              <h3>I Choose...</h3>
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* begin fairy section  */}
       <div className='fairyWrapper' style={fairyFlexStyle}>
         <div>
