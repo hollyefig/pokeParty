@@ -18,6 +18,7 @@ export default function PokemonSelection({
   setRollMessage,
   rollCount,
   setRollCount,
+  visible,
 }) {
   useEffect(() => {
     getGrassTypeData();
@@ -144,7 +145,7 @@ export default function PokemonSelection({
 
   return (
     <div className='wrapper sectionContainer'>
-      {msgDisplay && <Msg clearMsg={clearMsg} />}
+      {msgDisplay && <Msg clearMsg={clearMsg} visible={visible} />}
 
       <div className='grassWrapper'>
         <div className='eggOuterTriple'>

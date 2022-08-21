@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Msg({ clearMsg }) {
+export default function Msg({ clearMsg, visible }) {
   return (
-    <div className='msgWrapper'>
+    <div className={`msgWrapper ${visible === true ? "active" : null}`}>
       <div className='overlay'></div>
       <div className='msg'>
         Choose your starter, but choose wisely! Your rerolls between the 3 are

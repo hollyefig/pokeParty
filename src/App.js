@@ -37,7 +37,7 @@ function App() {
 
   const listenToScroll = () => {
     const docu = document.getElementById("App");
-    console.log("document height", docu.offsetHeight);
+    // console.log("document height", docu.offsetHeight);
     let heightToHideFrom =
       docu.offsetHeight - finalSection.current.offsetHeight * 1.2;
     const winScroll =

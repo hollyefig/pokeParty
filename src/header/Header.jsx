@@ -35,6 +35,26 @@ export default function Header({
     });
   }, []);
 
+  //reveal the tutorial message
+  const [visible, setVisible] = useState(false);
+  console.log("visible :", visible);
+
+  function reveal() {
+    const reveals = document.querySelectorAll(".msgWrapper");
+    for (let i = 0; i < reveals.length; i++) {
+      // const windowHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+
+      console.log("element top", elementTop);
+      if (elementTop <= 100) {
+        console.log("elementTop has reached 0");
+        setVisible(true);
+      }
+    }
+  }
+
+  window.addEventListener("scroll", reveal);
+
   return (
     <div className='headerWrapper'>
       <div
@@ -56,6 +76,7 @@ export default function Header({
         setRollMessage={setRollMessage}
         rollCount={rollCount}
         setRollCount={setRollCount}
+        visible={visible}
       />
     </div>
   );
