@@ -42,12 +42,10 @@ export default function Header({
   function reveal() {
     const reveals = document.querySelectorAll(".msgWrapper");
     for (let i = 0; i < reveals.length; i++) {
-      // const windowHeight = window.innerHeight;
       const elementTop = reveals[i].getBoundingClientRect().top;
+      const revealHeight = window.innerHeight * 0.5;
 
-      console.log("element top", elementTop);
-      if (elementTop <= 100) {
-        console.log("elementTop has reached 0");
+      if (elementTop <= revealHeight) {
         setVisible(true);
       }
     }
