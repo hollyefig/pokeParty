@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pokeParty/static/css/main.6b1a74a5.css",
+    "main.js": "/pokeParty/static/js/main.6ae3208e.js",
+    "index.html": "/pokeParty/index.html",
+    "main.6b1a74a5.css.map": "/pokeParty/static/css/main.6b1a74a5.css.map",
+    "main.6ae3208e.js.map": "/pokeParty/static/js/main.6ae3208e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b1a74a5.css",
+    "static/js/main.6ae3208e.js"
+  ]
+}
