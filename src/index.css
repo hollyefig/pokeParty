@@ -12,12 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-}
 
-html .sectionContainer {
+.sectionContainer {
   scroll-snap-align: start;
 }
 
@@ -25,6 +21,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 .eggOuter, .eggOuterTriple {
   /* border:1px solid black; */
